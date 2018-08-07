@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map Harebourg</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            user-select: none;
+            color: white;
+        }
+        span {
+            color: DodgerBlue;
+            text-decoration: underline;
+        }
+        a:visited {
+            color: DodgerBlue;
+        }
+    </style>
+</head>
+
+<body oncontextmenu= "return false">
+    <div style="position: absolute; padding-left: 620px; padding-top: 10px; transform: scale(1.2);">
+        <h3 onclick="changeColor()">Système des PI avec le Comte Harebourg</h3>
+        <p>
+            <span onclick="showMap()">Carte</span> :
+            <select id=map>
+                <option value="1">Harebourg</option>
+                <option value="2">w/ Nileza</option>
+                <option value="5">w/ Sylargh</option>
+                <option value="3">w/ Klime</option>
+                <option value="4">w/ Missiz Frizz</option>
+            </select>
+        </p>
+        <p>
+            Clic Gauche : Choix de la case de la Cible<br>
+            Clic Droit&emsp; : Choix de la case du Personnage
+        </p>
+        <p>
+            Pi :
+            <br><input id="radio1" type="radio" name="Pi" value="Gauche" checked>
+            <label for="radio1">1π/2 &nbsp 90°  &nbsp&nbsp&nbsp 2π/4 &nbsp&nbsp&nbsp&nbsp&nbsp Contre 3π/2 &nbsp Contre 270° &nbsp           Contre 6π/4</label>
+            <br><input id="radio2" type="radio" name="Pi" value="Droite">
+            <label for="radio2">3π/2 &nbsp 270° &nbsp           6π/4 &nbsp&nbsp&nbsp&nbsp&nbsp Contre 1π/2 &nbsp Contre 90°  &nbsp&nbsp&nbsp Contre 2π/4</label>
+            <br><input id="radio3" type="radio" name="Pi" value="Envers">
+            <label for="radio3">2π/2 &nbsp 180° &nbsp           4π/4</label>
+        </p>
+        (<span onclick='window.open("https://albanthv.github.io/public/Harebourg/Assets/Confusion horaire.jpg", "_blank", "toolbar=no, menubar=no, top=50, left=100, width=540, height=540")'>Version image</span>)
+    </div>
+</body>
+
+</html>

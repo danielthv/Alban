@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Le compte est bon</title>
+    <link rel="icon" type="image/png" href="https://vengeur69.github.io/favicon.png">
+    <style>
+        #title {
+            font-size: 50px;
+            padding-top: 5px;
+            padding-bottom: 20px;
+        }
+
+        table {
+            border: 20px solid #202020;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        th,
+        td {
+            background-color: #515151;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        td {
+            height: 60px;
+        }
+
+        input[type="number"] {
+            font-size: 30px;
+            width: 230px;
+        }
+
+        #generate {
+            font-size: 23px;
+            height: 60px;
+            width: 350px;
+        }
+
+        button {
+            font-size: 23px;
+            height: 60px;
+            width: 210px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="2">
+                <div id="title">Le compte est Bon</div>
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-bottom: 20px;">
+                <input id="but" type="number" placeholder="But" max=99999 min=0 autofocus>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="a" type="number" placeholder="a" max=9999 min=0>
+            </td>
+            <td>
+                <input id="b" type="number" placeholder="b" max=9999 min=0>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="c" type="number" placeholder="c" max=9999 min=0>
+            </td>
+            <td>
+                <input id="d" type="number" placeholder="d" max=9999 min=0>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="e" type="number" placeholder="e" max=9999 min=0>
+            </td>
+            <td>
+                <input id="f" type="number" placeholder="f" max=9999 min=0>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top: 20px; padding-bottom: 20px;">
+                <button type="button" onclick="search(event, 1)">Afficher le 1er résultat</button>
+            </td>
+            <td style="padding-top: 20px; padding-bottom: 20px;">
+                <button type="button" onclick="search(event, 0)">Afficher plusieurs résultats</button>
+            </td>
+        </tr>
+    </table>
+
+    <table style="border: 0px;">
+        <tr>
+            <td style="padding: 20px; background-color: #fff;">
+                <button id="generate" type="button" onclick="generate()">Générer des nombres
+                    <br> aléatoires</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function generate() {
+            document.getElementById("but").value = Math.floor((Math.random() * 999) + 1);
+            let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 25, 50, 75, 100];
+            document.getElementById("a").value = myArray[Math.floor(Math.random() * myArray.length)];
+            document.getElementById("b").value = myArray[Math.floor(Math.random() * myArray.length)];
+            document.getElementById("c").value = myArray[Math.floor(Math.random() * myArray.length)];
+            document.getElementById("d").value = myArray[Math.floor(Math.random() * myArray.length)];
+            document.getElementById("e").value = myArray[Math.floor(Math.random() * myArray.length)];
+            document.getElementById("f").value = myArray[Math.floor(Math.random() * myArray.length)];
+        }
+
+        function search(event, number) {
+            let ask = 10;
+            if (event.shiftKey) {
+                ask = 1000;
+            }
+            window.location = `./resultat.html?but=${document.getElementById("but").value}&a=${document.getElementById("a").value}&b=${document.getElementById("b").value}&c=${document.getElementById("c").value}&d=${document.getElementById("d").value}&e=${document.getElementById("e").value}&f=${document.getElementById("f").value}&ask=${ask}&premier=${number}`
+        }
+    </script>
+</body>
+
+</html>

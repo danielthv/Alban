@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Démineur</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            margin: 0;
+            /* background: black; */
+            /* Text is white */
+            color: white;
+            /* Disable selection */
+            user-select: none;
+
+            display: flex;
+            /* This centers our sketch horizontally. */
+            justify-content: center;
+            /* This centers our sketch vertically. not working */
+            /* align-items: center; */
+        }
+
+        #restart {
+            background: #b9b9b9;
+            color: black;
+            height: 50px;
+            width: 115px;
+            text-align: center;
+            /* the same as div height */
+            line-height: 50px;
+        }
+
+        #options {
+            background: #b9b9b9;
+            color: black;
+            width: 115px;
+        }
+
+        a:visited {
+            color: DodgerBlue;
+        }
+
+        #left {
+            position: absolute;
+            left: 5px;
+            transform: scale(1.3);
+            transform-origin: left top;
+            z-index: 1;
+        }
+
+        #right {
+            position: absolute;
+            right: 5px;
+            transform: scale(1.3);
+            transform-origin: right top;
+            z-index: 1;
+        }
+
+        #background {
+            position: absolute;
+            background: black;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #hidePreset {
+            display: none;
+        }
+
+        input[type="number"] {
+            width: 40px;
+        }
+
+        #preset {
+            width: 109px;
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+    <div id="left" class="noEvent">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        Démineur
+                    </th>
+                </tr>
+            </thead>
+            <tr id="hidePreset">
+                <td colspan="2">
+                    <select id=preset onchange="changePreset()">
+                        <option value="1">Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Expert</option>
+                        <option value="4">Custom</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="hide">
+                <td>
+                    <input id="rows" type="number" placeholder="0" value="9" min=0>
+                </td>
+                <td>
+                    rows
+                </td>
+            </tr>
+            <tr class="hide">
+                <td>
+                    <input id="columns" type="number" placeholder="0" value="9" min=0>
+                </td>
+                <td>
+                    columns
+                </td>
+            </tr>
+            <tr class="hide">
+                <td>
+                    <input id="mines" type="number" placeholder="0" value="10" min=1>
+                </td>
+                <td>
+                    mines
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <div id="options">Options</div>
+                    <!-- <button id="restart">Restart</button> -->
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <div id="restart">Restart</div>
+                    <!-- <button id="restart">Restart</button> -->
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="right">
+        <table>
+            <tr>
+                <td>
+                    Time :
+                </td>
+                <td>
+                    <div id="time">0</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mines left :
+                </td>
+                <td>
+                    <div id="minesLeft">10</div>
+                </td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <div id="GameOver"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div id="background"></div>
+</body>
+
+</html>

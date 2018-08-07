@@ -1,0 +1,25 @@
+{
+  "name": "websocket_alban",
+  "version": "1.0.0",
+  "description": "socket example from alban",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "sockets",
+    "p5.js",
+    "node"
+  ],
+  "author": "alban thouvignon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vengeur69/vengeur69.github.io"
+  }
+}

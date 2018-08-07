@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game of Life</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            user-select: none;
+            color: white;
+        }
+        .pos{
+            position: fixed;
+            left: 10px;
+        }
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body oncontextmenu= "return false">
+    <div id="buttons">
+        <button type="button" title="Enter" class="pos" id="pause" style="top: 10px;">Play</button>
+        <button type="button" title="Space" class="pos" id="step" style="top: 40px;">Next step</button>
+        <button type="button" title="Backspace|Delete" class="pos" id="clear" style="top: 70px;">Clear</button>
+        <button type="button" class="pos" id="store" style="top: 100px;">Store</button>
+        <input type="range" title="Speed(fps)" min="1" max="60" value="15" class="pos" id="speed" style="bottom: 5px; width: 400px;">
+    </div>
+</body>
+
+</html>
